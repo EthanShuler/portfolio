@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro&display=swap');
+
+/* Variables */
+:root {
+    --font-family: "Open Sans", sans-serif;
+    --normal-font: 400;
+    --bold-font: 700;
+    --primary-color: #000000;
+    --secondary-color: #c24a10;
+    /* #c24a10  #8f0b00*/
+    --primary-shadow: #575757;
+    --bottom-margin: 0.5rem;
+    --line-height: 1.7rem;
+}
+
+/* CSS Rests */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    padding-left: 12.5em;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.container h1 {
+    margin-bottom: var(--bottom-margin);
+}
+
+/* TABLET VIEW */
+@media screen and (max-device-width: 768px) {
+    .container {
+        padding-left: 0;
+    }
+}
