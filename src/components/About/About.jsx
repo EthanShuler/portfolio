@@ -1,15 +1,72 @@
 import React from 'react'
-import './About.css'
 import ethan from './Ethan.jpg'
 import Navbar from '../Navbar/Navbar'
+import styled from 'styled-components'
+import { device } from '../../utils/Devices'
+
+const AboutContainer = styled.div`
+  padding-left: 12.5em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+
+  @media screen and ${device.tablet} {
+    padding-left: 0;
+  }
+`
+
+const Row = styled.div`
+  display: flex;
+
+  @media screen and ${device.tablet} {
+    display: block;
+  }
+`
+
+const AboutColumn = styled.div`
+  width: 50%;
+  line-height: var(--line-height);
+  margin-bottom: var(--bottom-margin);
+
+  p {
+    padding: 1em 0;
+  }
+
+  @media screen and ${device.tablet} {
+    width: 100%;
+    padding: 1em;
+  }
+`
+
+const RowImage = styled.img`
+  max-width: 50%;
+  padding: 2em;
+  object-fit: contain;
+
+  @media screen and ${device.tablet} {
+    max-width: 100%;
+  }
+`
+
+const AboutSection = styled.div`
+  line-height: var(--line-height);
+
+  p {
+    line-height: var(--line-height);
+    padding: 2em 0;
+  }
+
+  @media screen and ${device.tablet} {
+    padding: 1em;
+  }
+`
 
 const About = () => {
   return (
     <div>
       <Navbar />
-      <section className="container" id="about">
-        <div className="row">
-          <div className="about-col">
+      <AboutContainer id="about">
+        <Row>
+          <AboutColumn>
             <h1>About Me</h1>
             <p>
               <p>Hello and welcome to my website! Here you will find information about my career as a bassoonist, get to know who I am as a person, and hear me play. I grew up in Milwaukee, Wisconsin with two musician parents and a musically talented brother. Once I graduate with my master’s degree, it will be the ninth music degree in my family of four! My earliest musical experiences involved singing at home with my family. I joined the Milwaukee Children’s choir in elementary school and fell in love with singing. Once I joined the Bel Canto Boy’s choir, I would solo with the adult choir, play the role of Amahl in Amahl and the Night Visitors with the Milwaukee Opera Theater, and even record for a TV commercial!</p>
@@ -18,12 +75,12 @@ const About = () => {
               <p>I somehow graduated in four years with both degrees, earning the Chancellor’s Achievement Award for my GPA, and took a year to work in tech. I first worked in IT at a K-12 school due to the increased technology demands that come with hybrid learning. I then was a software engineer in the Milwaukee area. During this time, I entered and won first prize in the Australian Double Reed Society bassoon competition.</p>
               <p>My work in the tech sector was interrupted by an offer to attend the Frost School of Music and study with Gabriel Beavers as a Henry Mancini Institute Fellow. For the last year, I have been in Miami practicing hard, making lots of reeds, and playing in various ensembles, such as the Henry Mancini Institute Orchestra, the Palm Beach Symphony (as a substitute), and the Frost Symphony Orchestra.</p>
             </p>
-          </div>
-          <img src={ethan} alt="Ethan performing with oboe" className="row-img" />
-        </div>
+          </AboutColumn>
+          <RowImage src={ethan} alt="Ethan performing with oboe" />
+        </Row>
 
-        <div className="row">
-          <div className="about">
+        <Row>
+          <AboutSection>
             <h1>Biography</h1>
             <p>Bassoonist Ethan Shuler graduated from the University of Colorado-Boulder in
               May of 2020. At CU, Ethan studied music performance and computer science,
@@ -42,21 +99,21 @@ const About = () => {
               Ethan learning new programming skills, listening to jazz, or making reeds while
               rewatching Lord of the Rings.
             </p>
-          </div>
-        </div>
+          </AboutSection>
+        </Row>
 
-        <div className="row">
-          <div className="about">
+        <Row>
+          <AboutSection>
             <h1>My Values</h1>
             <p>
               I am strictly committed to fostering an inclusive, kind, and empathetic approach
               to teaching and performing music. I believe that with the right teachers and work
               ethic, anybody can play beautiful music.
             </p>
-          </div>
-        </div>
+          </AboutSection>
+        </Row>
 
-      </section>
+      </AboutContainer>
     </div>
 
   )
