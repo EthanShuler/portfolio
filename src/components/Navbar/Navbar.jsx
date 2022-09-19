@@ -7,35 +7,35 @@ import youtubeIcon from './youtube.svg'
 import { device } from '../../utils/Devices'
 
 const Navigation = styled.nav`
-    display: flex;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  width: 12.5em;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+  padding: 2em;
+  font-size: 1.5em;
+  gap: 1.9rem;
+
+  font-weight: 700;
+  color: #000000;
+
+  @media screen and ${device.tablet} {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0;
+    justify-content: center;
     flex-direction: column;
+    display: none;
 
-    margin: 0;
-    width: 12.5em;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-
-    padding: 2em;
-    font-size: 1.5em;
-    gap: 1.9rem;
-
-    font-weight: 700;
-    color: #000000;
-
-    @media screen and ${device.tablet} {
-      width: 100%;
-      height: auto;
-      position: relative;
-      padding: 0;
-      justify-content: center;
-      flex-direction: column;
-      display: none;
-
-      ${({ active }) => active && `
-        display: flex
-        `}
-    }
+    ${({ active }) => active && `
+      display: flex
+      `}
+  }
 `
 
 const Hamburger = styled.div`
@@ -69,11 +69,11 @@ const NavLinkElement = styled(NavLink)`
   }
 `
 const NavText = styled.p`
-display: inline-block;
-&:hover {
-  color: #c24a10;
-    border-bottom: 2px solid #c24a10;
-}
+  display: inline-block;
+  &:hover {
+    color: #c24a10;
+      border-bottom: 2px solid #c24a10;
+  }
 `
 
 const SocialMedia = styled.div`
