@@ -11,17 +11,17 @@ const Navigation = styled.nav`
   flex-direction: column;
 
   margin: 0;
-  width: 12.5em;
+  width: 7em;
   position: fixed;
-  height: 100%;
-  overflow: auto;
-
-  padding: 2em;
+  top: 2em;
+  left: 1em;
   font-size: 1.5em;
   gap: 1.9rem;
 
   font-weight: 700;
   color: #000000;
+  padding: 1em 1em;
+
 
   @media screen and ${device.tablet} {
     width: 100%;
@@ -58,6 +58,7 @@ const Bar = styled.span`
 
 const NavLinkElement = styled(NavLink)`
   padding: 1em;
+
   &[class*="active"] {
     pointer-events: none;
     opacity: 50%;
@@ -84,7 +85,6 @@ const SocialMedia = styled.div`
 
 const Icon = styled.img`
   height: 1em;
-  padding: 0 0.2em;
 `
 
 const HeaderLink = ({ page, suppliedTitle }) => {
