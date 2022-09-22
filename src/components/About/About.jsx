@@ -3,14 +3,21 @@ import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 import { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
+import ethan_phil from './ethan_phil.jpg'
 
 const AboutContainer = styled.div`
   padding-left: 12.5em;
   padding-top: 3em;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
 
   @media screen and ${device.tablet} {
     padding-left: 0;
+    margin: 0 0.5em;
   }
 `
 
@@ -70,10 +77,10 @@ const Values = () => {
   )
 }
 
-const MoreAboutMe = () => {
+const MyStory = () => {
   return (
     <AboutSection>
-      <h2>More About Me</h2>
+      <h2>My Story</h2>
       <p>
         <p>Hello and welcome to my website! Here you will find information about my career as a bassoonist, get to know who I am as a person, and hear me play. I grew up in Milwaukee, Wisconsin with two musician parents and a musically talented brother. Once I graduate with my master’s degree, it will be the ninth music degree in my family of four! My earliest musical experiences involved singing at home with my family. I joined the Milwaukee Children’s choir in elementary school and fell in love with singing. Once I joined the Bel Canto Boy’s choir, I would solo with the adult choir, play the role of Amahl in Amahl and the Night Visitors with the Milwaukee Opera Theater, and even record for a TV commercial!</p>
         <p>I started playing the bassoon in the fifth grade - I wanted to play trombone but I was too small to reach the furthest slide positions! I quickly fell in love with bassoon and thanks to my fabulous teacher, Andrew Jackson, I stuck with it. My first exposure to orchestral playing occurred once I joined the Milwaukee Youth Symphony Orchestra in my last two years of high school, cementing my desire to play music for the rest of my life.</p>
@@ -87,12 +94,25 @@ const MoreAboutMe = () => {
 
 const AboutPanel = styled.div`
 margin: 0 auto;
-margin-top: 3em;
-max-width: 80vh;
+max-width: 80%;
 padding: 2em;
 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+margin-bottom: 2em;
+
+  @media screen and ${device.tablet} {
+    margin: 0 auto;
+    max-width: 100%;
+  }
 `
 
+const BioImage = styled.img`
+  max-width: 80%;
+  
+  object-fit: contain;
+  
+  @media screen and ${device.tablet} {
+  }
+`
 
 const AboutButton = styled.button`
   align-items: center;
@@ -148,13 +168,12 @@ flex-direction: row;
 justify-content: space-evenly;
 `
 
-
-const AboutSelector = ({ setBio, setValues, setMoreAboutMe }) => {
+const AboutSelector = ({ setBio, setValues, setMyStory }) => {
   return (
     <ButtonHolder>
       <AboutButton onClick={setBio}>Bio</AboutButton>
       <AboutButton onClick={setValues}>Values</AboutButton>
-      <AboutButton onClick={setMoreAboutMe}>More About me</AboutButton>
+      <AboutButton onClick={setMyStory}>My Story</AboutButton>
     </ButtonHolder>
   )
 }
@@ -163,7 +182,7 @@ const About = () => {
   const [aboutSelection, setAboutSelection] = useState(0)
   const setBio = () => setAboutSelection(0)
   const setValues = () => setAboutSelection(1)
-  const setMoreAboutMe = () => setAboutSelection(2)
+  const setMyStory = () => setAboutSelection(2)
 
 
   let aboutDisplay;
@@ -172,21 +191,20 @@ const About = () => {
   } else if (aboutSelection === 1) {
     aboutDisplay = <Values />
   } else {
-    aboutDisplay = <MoreAboutMe />
+    aboutDisplay = <MyStory />
   }
 
   return (
     <>
       <Navbar />
       <AboutContainer id="about">
+        <BioImage src={ethan_phil} alt="Ethan playing bassoon, his brother Phil playing French Horn" />
         <AboutPanel>
-          <AboutSelector setBio={setBio} setValues={setValues} setMoreAboutMe={setMoreAboutMe} />
+          <AboutSelector setBio={setBio} setValues={setValues} setMyStory={setMyStory} />
           {aboutDisplay}
         </AboutPanel>
       </AboutContainer>
     </>
-
-
   )
 }
 

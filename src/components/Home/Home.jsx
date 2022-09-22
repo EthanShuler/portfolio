@@ -40,6 +40,8 @@ const Title = styled.div`
 
 const HeroImg = styled.img`
   max-width: max-content;
+  object-fit: cover;
+  overflow: hidden;
 `
 
 const Hero = () => {
