@@ -3,22 +3,24 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 
+const NavContainer = styled.div`
+
+`
+
 const Navigation = styled.nav`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
 
-  margin: 0;
-  width: 7em;
-  position: fixed;
-  top: 2em;
-  left: 1em;
-  font-size: 1.5em;
-  gap: 1.9rem;
-
-  font-weight: 700;
-  color: #000000;
+  position: relative;
+  height: 4.5em;
+  width: 100%;
   padding: 1em 1em;
-
+  align-items: center;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  font-size: 1.5em;
+  font-weight: 700;
 
   @media screen and ${device.tablet} {
     width: 100%;
@@ -33,6 +35,16 @@ const Navigation = styled.nav`
       display: flex
       `}
   }
+`
+
+const LeftNav = styled.div`
+`
+
+const RightNav = styled.div`
+@media screen and ${device.tablet} {
+  display: flex;
+  flex-direction: column;
+}
 `
 
 const Hamburger = styled.div`
@@ -90,21 +102,25 @@ const Navbar = () => {
   const [active, setActive] = useState(false)
 
   return (
-    <div>
+    <NavContainer>
       <Hamburger onClick={() => setActive(!active)}>
         <Bar></Bar>
         <Bar></Bar>
         <Bar></Bar>
       </Hamburger>
-      <Navigation active={active} className={active ? 'active' : ''}>
-        <HeaderLink page='' suppliedTitle='Ethan' />
-        <HeaderLink page='home' />
-        <HeaderLink page='about' />
-        <HeaderLink page='media' />
-        
-      </Navigation>
-    </div>
 
+      <Navigation active={active} >
+        <LeftNav>
+          <HeaderLink page='' suppliedTitle='Ethan' />
+        </LeftNav>
+        <RightNav>
+          <HeaderLink page='home' />
+          <HeaderLink page='about' />
+          <HeaderLink page='media' />
+        </RightNav>
+      </Navigation>
+
+    </NavContainer>
   )
 }
 

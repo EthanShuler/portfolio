@@ -1,12 +1,9 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 
 const Listen = styled.section`
-  padding-left: 12.5em;
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding: 4em;
 
   h1 {
     padding: 3em 0;
@@ -65,50 +62,47 @@ const YoutubeEmbed = ({ title, embedId, description, date }) => {
 
 const Media = () => {
   return (
-    <div>
-      <Navbar />
-      <Listen id="media">
-          <h1>Listen</h1>
-          <Videos>
-            <YoutubeEmbed
-              title="Poulenc Trio"
-              embedId="VJyt66S_blg"
-              description="Performed with Curtis Sellers (oboe) and Sarah Thune (piano) at CU-Boulder"
-              date="2020"
-            />
-            <YoutubeEmbed
-              title="Hummel Concerto"
-              embedId="b9rYzbNitpo"
-              description="Recorded with Ellen Shuler (piano)"
-              date="2020"
-            />
-            <YoutubeEmbed
-              title="Pure Imagination"
-              embedId="4gi7Dj0sFCI"
-              description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-              date="2020"
-            />
-            <YoutubeEmbed
-              title="Pure Imagination"
-              embedId="4gi7Dj0sFCI"
-              description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-              date="2020"
-            />
-            <YoutubeEmbed
-              title="Pure Imagination"
-              embedId="4gi7Dj0sFCI"
-              description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-              date="2020"
-            />
-            <YoutubeEmbed
-              title="Pure Imagination"
-              embedId="4gi7Dj0sFCI"
-              description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-              date="2020"
-            />
-          </Videos>
-      </Listen>
-    </div>
+    <Listen id="media">
+      <h1>Listen</h1>
+      <Videos>
+        <YoutubeEmbed
+          title="Poulenc Trio"
+          embedId="VJyt66S_blg"
+          description="Performed with Curtis Sellers (oboe) and Sarah Thune (piano) at CU-Boulder"
+          date="2020"
+        />
+        <YoutubeEmbed
+          title="Hummel Concerto"
+          embedId="b9rYzbNitpo"
+          description="Recorded with Ellen Shuler (piano)"
+          date="2020"
+        />
+        <YoutubeEmbed
+          title="Pure Imagination"
+          embedId="4gi7Dj0sFCI"
+          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
+          date="2020"
+        />
+        <YoutubeEmbed
+          title="Pure Imagination"
+          embedId="4gi7Dj0sFCI"
+          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
+          date="2020"
+        />
+        <YoutubeEmbed
+          title="Pure Imagination"
+          embedId="4gi7Dj0sFCI"
+          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
+          date="2020"
+        />
+        <YoutubeEmbed
+          title="Pure Imagination"
+          embedId="4gi7Dj0sFCI"
+          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
+          date="2020"
+        />
+      </Videos>
+    </Listen>
   )
 }
 

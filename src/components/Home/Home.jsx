@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import headshot from './headshot.png'
-import Navbar from '../Navbar/Navbar'
 import { device } from '../../utils/Devices'
 
 const HeroContainer = styled.section`
@@ -14,9 +13,7 @@ const HeroContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  padding-left: 12.5em;
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding: 4em;
 
   @media screen and ${device.tablet} {
     padding-left: 0;
@@ -46,17 +43,13 @@ const HeroImg = styled.img`
 
 const Hero = () => {
   return (
-    <div>
-      <Navbar />
-      <HeroContainer id="hero">
-        <HeroImg src={headshot} alt="Headshot" />
-        <Title>
-          <h1>Ethan Shuler</h1>
-          <h2>Bassoonist</h2>
-        </Title>
-      </HeroContainer>
-    </div>
-
+    <HeroContainer id="hero">
+      <HeroImg src={headshot} alt="Headshot" />
+      <Title>
+        <h1>Ethan Shuler</h1>
+        <h2>Bassoonist</h2>
+      </Title>
+    </HeroContainer>
   )
 }
 

@@ -5,8 +5,19 @@ import Media from './components/Media/Media'
 import Landing from './components/Landing/Landing'
 import Programmer from './components/Programmer/Programmer';
 import Globals from './utils/GlobalStyles';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 
+const Musician = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  )
+}
+
+const WithoutNav = () => <Outlet />
 
 const App = () => {
   return (
@@ -14,11 +25,17 @@ const App = () => {
       <Globals />
       <Router>
         <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='media' element={<Media />} />
-          <Route path='programmer' element={<Programmer />} />
+          <Route element={<WithoutNav />}>
+            <Route path="/" element={<Landing />} />
+            <Route path='/programmer' element={<Programmer />} />
+          </Route>
+          <Route element={<Musician />}>
+            <Route path='/home' element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='media' element={<Media />} />
+          </Route>
+          
+          
         </Routes>
       </Router>
 

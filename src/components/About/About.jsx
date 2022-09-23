@@ -2,12 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 import { useState } from 'react'
-import Navbar from '../Navbar/Navbar'
 import ethan_phil from './ethan_phil.jpg'
 
 const AboutContainer = styled.div`
-  padding-left: 12.5em;
-  padding-top: 3em;
+  padding: 4em;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -195,16 +193,13 @@ const About = () => {
   }
 
   return (
-    <>
-      <Navbar />
-      <AboutContainer id="about">
-        <BioImage src={ethan_phil} alt="Ethan playing bassoon, his brother Phil playing French Horn" />
-        <AboutPanel>
-          <AboutSelector setBio={setBio} setValues={setValues} setMyStory={setMyStory} />
-          {aboutDisplay}
-        </AboutPanel>
-      </AboutContainer>
-    </>
+    <AboutContainer id="about">
+      <BioImage src={ethan_phil} alt="Ethan playing bassoon, his brother Phil playing French Horn" />
+      <AboutPanel>
+        <AboutSelector setBio={setBio} setValues={setValues} setMyStory={setMyStory} />
+        {aboutDisplay}
+      </AboutPanel>
+    </AboutContainer>
   )
 }
 
