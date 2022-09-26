@@ -6,6 +6,7 @@ import Landing from './components/Landing/Landing'
 import Programmer from './components/Programmer/Programmer';
 import Globals from './utils/GlobalStyles';
 import Navbar from './components/Navbar/Navbar';
+import Resume from './components/Resume/Resume';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 
 const Musician = () => {
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/home' element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='media' element={<Media />} />
+            <Route path='resume' element={<Resume />} />
           </Route>
           
           

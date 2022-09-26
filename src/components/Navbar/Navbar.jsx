@@ -3,10 +3,6 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 
-const NavContainer = styled.div`
-
-`
-
 const Navigation = styled.nav`
   display: flex;
   align-items: center;
@@ -18,74 +14,94 @@ const Navigation = styled.nav`
   width: 100%;
   padding: 1em 1em;
   align-items: center;
-  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
   font-size: 1.5em;
   font-weight: 700;
 
-  @media screen and ${device.tablet} {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 0;
-    justify-content: center;
-    flex-direction: column;
-    display: none;
-
-    ${({ active }) => active && `
-      display: flex
-      `}
+  z-index: 1000;
   }
 `
 
-const LeftNav = styled.div`
+const Brand = styled.div`
+  margin-left: 1rem;
 `
 
-const RightNav = styled.div`
-@media screen and ${device.tablet} {
+const NavigationMenu = styled.div`
+  margin-left: auto;
   display: flex;
-  flex-direction: column;
-}
-`
+  padding: 0;
+  gap: 2em;
 
-const Hamburger = styled.div`
-  display: none;
   @media screen and ${device.tablet} {
-    display: block;
-    cursor: pointer;
-  }
-`
+    flex-direction: column;
+    position: absolute;
+    top: 3.75em;
+    right: 0;
 
-const Bar = styled.span`
-  display: block;
-  width: 1.5625em;
-  height: 0.1875em;
-  margin: 0.3125em auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3 ease-in-out;
-  background-color: #101010;
+    height: calc(100vh - 4.8125rem);
+    width: 100%;
+    background-color: #fff;
+
+    display: ${({ expanded }) => (expanded ? 'block' : 'none')};
+  }
 `
 
 const NavLinkElement = styled(NavLink)`
-  padding: 1em;
+  margin: 0 1rem;
 
   &[class*="active"] {
     pointer-events: none;
     opacity: 50%;
   }
+
   @media screen and ${device.tablet} {
     text-align: center;
-    float: none;
-    padding: 0;
-  }
+    margin: 0;
+}
 `
 const NavText = styled.p`
-  display: inline-block;
+  display: block;
   &:hover {
     color: #c24a10;
-      border-bottom: 2px solid #c24a10;
+    border-bottom: 2px solid #c24a10;
+  }
+
+  @media screen and ${device.tablet} {
+    padding: 1.5rem 0;
+    width: 100%;
+
+    &:hover {
+      border-bottom: 0;
+      background-color: #eee;
+    }
   }
 `
 
+const Hamburger = styled.button`
+  border: 0;
+  height: 2.5em;
+  width: 2.5em;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #c24a10;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color: #fff;
+
+  position: absolute;
+  top: 50%;
+  right: 1.5625em;
+  transform: translateY(-50%);
+
+  display: none;
+
+  &:hover {
+    background-color: #612508;
+  }
+
+  @media screen and ${device.tablet} {
+    display: block;
+  }
+`
 
 const HeaderLink = ({ page, suppliedTitle }) => {
   const title = page.charAt(0).toUpperCase() + page.slice(1)
@@ -99,28 +115,26 @@ const HeaderLink = ({ page, suppliedTitle }) => {
 }
 
 const Navbar = () => {
-  const [active, setActive] = useState(false)
+  const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
-    <NavContainer>
-      <Hamburger onClick={() => setActive(!active)}>
-        <Bar></Bar>
-        <Bar></Bar>
-        <Bar></Bar>
+    <Navigation>
+      <Hamburger onClick={() => setIsNavExpanded(!isNavExpanded)}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+
       </Hamburger>
-
-      <Navigation active={active} >
-        <LeftNav>
-          <HeaderLink page='' suppliedTitle='Ethan' />
-        </LeftNav>
-        <RightNav>
-          <HeaderLink page='home' />
-          <HeaderLink page='about' />
-          <HeaderLink page='media' />
-        </RightNav>
-      </Navigation>
-
-    </NavContainer>
+      <Brand>
+        <NavLink to='/'> Ethan </NavLink>
+      </Brand>
+      <NavigationMenu expanded={isNavExpanded}>
+        <HeaderLink page='home' />
+        <HeaderLink page='about' />
+        <HeaderLink page='media' />
+        <HeaderLink page='resume' />
+      </NavigationMenu>
+    </Navigation>
   )
 }
 

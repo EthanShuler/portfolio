@@ -10,8 +10,8 @@ const Listen = styled.section`
   }
 
   @media screen and ${device.tablet} {
+    margin: 0 auto;
     justify-content: center;
-    padding-left: 0;
     h1 {
       padding: 0;
       text-align: center;
@@ -75,24 +75,6 @@ const Media = () => {
           title="Hummel Concerto"
           embedId="b9rYzbNitpo"
           description="Recorded with Ellen Shuler (piano)"
-          date="2020"
-        />
-        <YoutubeEmbed
-          title="Pure Imagination"
-          embedId="4gi7Dj0sFCI"
-          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-          date="2020"
-        />
-        <YoutubeEmbed
-          title="Pure Imagination"
-          embedId="4gi7Dj0sFCI"
-          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-          date="2020"
-        />
-        <YoutubeEmbed
-          title="Pure Imagination"
-          embedId="4gi7Dj0sFCI"
-          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
           date="2020"
         />
         <YoutubeEmbed

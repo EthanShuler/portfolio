@@ -99,9 +99,9 @@
 }
 
 @media (max-width: 800px) {
-    /* .split-container {
+    .split-container {
         overflow-y: hidden;
-    } */
+    }
 
     .split-container h1 {
         font-size: 2rem;
@@ -111,18 +111,38 @@
         width: 12rem;
     }
 
-    /* .split {
+    .split {
         width: 100%;
         height: 50%;
     }
 
-    .split-left {
+    .split.left {
         top: 0;
     }
 
-    .split-right {
+    .split.right {
         bottom: 0;
-    } */
+    }
+
+    .hover-left .left {
+        height: var(--hover-width);
+        width: 100%;
+    }
+    
+    .hover-left .right {
+        height: var(--other-width);
+        width: 100%;
+    }
+    
+    .hover-right .right {
+        height: var(--hover-width);
+        width: 100%;
+    }
+    
+    .hover-right .left {
+        height: var(--other-width);
+        width: 100%;
+    }
 }
 
 @media (max-height: 700px) {

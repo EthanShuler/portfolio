@@ -16,7 +16,7 @@ const HeroContainer = styled.section`
   padding: 4em;
 
   @media screen and ${device.tablet} {
-    padding-left: 0;
+    padding: 0;
     flex-direction: column-reverse;
     justify-content: center;
   }
@@ -37,8 +37,17 @@ const Title = styled.div`
 
 const HeroImg = styled.img`
   max-width: max-content;
-  object-fit: cover;
+  object-fit: contain;
   overflow: hidden;
+
+  @media screen and ${device.tablet} {
+    padding: 0 1em;
+    width: 100%;
+  }
+
+  @media screen and ${device.mobile} {
+    width: 100%;
+  }
 `
 
 const Hero = () => {
