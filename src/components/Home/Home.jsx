@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import headshot from './HeroImg.png'
+import headshot from './HeroImg.jpg'
 import { device } from '../../utils/Devices'
 
 const HeroContainer = styled.section`
