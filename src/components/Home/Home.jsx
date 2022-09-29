@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import headshot from './headshot.png'
+import headshot from './HeroImg.png'
 import { device } from '../../utils/Devices'
 
 const HeroContainer = styled.section`
-  height: 100%;
+  position: absolute;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  padding-top: 5em;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -14,6 +15,9 @@ const HeroContainer = styled.section`
   flex-direction: column;
 
   padding: 4em;
+
+  background-image: url(${headshot});
+  background-size: cover;
 
   @media screen and ${device.tablet} {
     padding: 0;
@@ -23,11 +27,19 @@ const HeroContainer = styled.section`
 `
 
 const Title = styled.div`
+  color: white;
   font-family: 'Source Serif Pro', serif;
-  font-size: 3em;
+  font-size: 5em;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
 
   @media screen and ${device.tablet} {
     text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 3em;
+    left: 0;
   }
 
   @media screen and ${device.mobile} {
@@ -35,25 +47,9 @@ const Title = styled.div`
   }
 `
 
-const HeroImg = styled.img`
-  max-width: max-content;
-  object-fit: contain;
-  overflow: hidden;
-
-  @media screen and ${device.tablet} {
-    padding: 0 1em;
-    width: 100%;
-  }
-
-  @media screen and ${device.mobile} {
-    width: 100%;
-  }
-`
-
 const Hero = () => {
   return (
     <HeroContainer id="hero">
-      <HeroImg src={headshot} alt="Headshot" />
       <Title>
         <h1>Ethan Shuler</h1>
         <h2>Bassoonist</h2>

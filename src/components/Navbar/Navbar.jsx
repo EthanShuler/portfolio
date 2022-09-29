@@ -7,7 +7,7 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
 
   position: relative;
   height: 4.5em;

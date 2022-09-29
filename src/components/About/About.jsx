@@ -94,7 +94,6 @@ background-size: cover;
 background-repeat: no-repeat;
 position: fixed;
 right: 0;
-top: 0;
 overflow: hidden;
 
 @media screen and ${device.tablet} {

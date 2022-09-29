@@ -99,7 +99,7 @@ margin: 2em 0;
 
 const ResumeLink = () => {
   return (
-    <a href={ResumePdf} without rel='noopener noreferrer' target='_blank' >
+    <a href={ResumePdf} rel='noopener noreferrer' target='_blank' >
       <ResumeButton trailingIcon="picture_as_pdf" label="Resume">Download Resume</ResumeButton>
     </a>
   )
