@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
+import logo from './logo.svg'
 
 const Navigation = styled.nav`
   display: flex;
@@ -18,6 +19,10 @@ const Navigation = styled.nav`
   font-weight: 700;
 
   z-index: 1000;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease;
   }
 `
 
@@ -103,13 +108,21 @@ const Hamburger = styled.button`
   }
 `
 
-const HeaderLink = ({ page, suppliedTitle }) => {
+const Logo = styled.img`
+width: 75%;
+
+@media screen and ${device.tablet} {
+  width: 60%;
+}
+`
+
+const HeaderLink = ({ page, setExpanded }) => {
   const title = page.charAt(0).toUpperCase() + page.slice(1)
 
 
   return (
-    <NavLinkElement to={`/${page}`}>
-      <NavText>{suppliedTitle ? suppliedTitle : title}</NavText>
+    <NavLinkElement to={`/${page}`} onClick={() => setExpanded(false)}>
+      <NavText>{title}</NavText>
     </NavLinkElement>
   )
 }
@@ -126,13 +139,15 @@ const Navbar = () => {
 
       </Hamburger>
       <Brand>
-        <NavLink to='/'> Ethan </NavLink>
+        <NavLink to='/'>
+          <Logo src={logo} alt="logo"/>
+        </NavLink>
       </Brand>
       <NavigationMenu expanded={isNavExpanded}>
-        <HeaderLink page='home' />
-        <HeaderLink page='about' />
-        <HeaderLink page='media' />
-        <HeaderLink page='resume' />
+        <HeaderLink page='home' setExpanded={setIsNavExpanded} />
+        <HeaderLink page='about' setExpanded={setIsNavExpanded} />
+        <HeaderLink page='media' setExpanded={setIsNavExpanded} />
+        <HeaderLink page='resume' setExpanded={setIsNavExpanded} />
       </NavigationMenu>
     </Navigation>
   )
