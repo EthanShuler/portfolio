@@ -1,12 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
+import images from './images'
+import PhotoGallery from './PhotoGallery'
 
-const Listen = styled.section`
+const Container = styled.section`
   padding: 4em;
 
   h1 {
     padding: 3em 0;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
   }
 
   @media screen and ${device.tablet} {
@@ -14,7 +21,6 @@ const Listen = styled.section`
     justify-content: center;
     h1 {
       padding: 0;
-      text-align: center;
     }
   }
 `
@@ -22,28 +28,36 @@ const Listen = styled.section`
 const Videos = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content: center;
+  gap: 4rem;
 `
 
 const VideoResponsive = styled.div`
   transition: all .2s ease-in-out;
-  width: 16em;
-  border: .18em solid black;
-  padding: 1em 0;
+  width: 24rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 0.625em;
+  padding: 2em;
   margin: 1em 0;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  span {
+    opacity: 50%;
+    font-size: small;
+  }
 
   iframe {
     width: 100%;
+    height: 12rem;
   }
 
   &:hover {
     transform: scale(1.2);
   }
-`
-
-const Date = styled.p`
-  opacity: 50%;
-  font-size: small;
 `
 
 const YoutubeEmbed = ({ title, embedId, description, date }) => {
@@ -54,16 +68,15 @@ const YoutubeEmbed = ({ title, embedId, description, date }) => {
         src={`https://youtube.com/embed/${embedId}`}
         frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen title="Embedded Youtube" />
-      <p>{description}</p>
-      <Date>{date}</Date>
+      <span>{date}</span>
     </VideoResponsive>
   )
 }
 
 const Media = () => {
   return (
-    <Listen id="media">
-      <h1>Listen</h1>
+    <Container>
+      <h1>Watch & Listen</h1>
       <Videos>
         <YoutubeEmbed
           title="Poulenc Trio"
@@ -84,7 +97,10 @@ const Media = () => {
           date="2020"
         />
       </Videos>
-    </Listen>
+      <h1>Look</h1>
+      <p>Click/Tap image to view full size image and a description</p>
+      <PhotoGallery images={images} />
+    </Container>
   )
 }
 

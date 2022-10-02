@@ -8,7 +8,7 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: hsl(0 0% 100% / 0.3);
 
   position: relative;
   height: 4.5em;
@@ -21,8 +21,15 @@ const Navigation = styled.nav`
   z-index: 1000;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: hsl(0 0% 100% / 0.8);
     transition: background-color 0.3s ease;
+  }
+
+  @media screen and ${device.tablet} {
+    background-color: ${({ expanded }) => (expanded ? 'hsl(0 0% 100% / 0)' : 'hsl(0 0% 100% / 0.5)')};
+
+    &:hover {
+      background-color: ${({ expanded }) => (expanded ? 'hsl(0 0% 100% / 0)' : 'hsl(0 0% 100% / 0.5)')};
   }
 `
 
@@ -37,14 +44,16 @@ const NavigationMenu = styled.div`
   gap: 2em;
 
   @media screen and ${device.tablet} {
-    flex-direction: column;
-    position: absolute;
-    top: 3.75em;
-    right: 0;
+    gap: 2em;
 
-    height: calc(100vh - 4.8125rem);
-    width: 100%;
-    background-color: #fff;
+    position: fixed;
+    inset: 0 0 0 30%;
+  
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
 
     display: ${({ expanded }) => (expanded ? 'block' : 'none')};
   }
@@ -92,6 +101,8 @@ const Hamburger = styled.button`
   transition: background-color 0.2s ease-in-out;
   color: #fff;
 
+  z-index: 2000;
+
   position: absolute;
   top: 50%;
   right: 1.5625em;
@@ -131,7 +142,7 @@ const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
-    <Navigation>
+    <Navigation expanded={isNavExpanded}>
       <Hamburger onClick={() => setIsNavExpanded(!isNavExpanded)}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -147,7 +158,6 @@ const Navbar = () => {
         <HeaderLink page='home' setExpanded={setIsNavExpanded} />
         <HeaderLink page='about' setExpanded={setIsNavExpanded} />
         <HeaderLink page='media' setExpanded={setIsNavExpanded} />
-        <HeaderLink page='resume' setExpanded={setIsNavExpanded} />
       </NavigationMenu>
     </Navigation>
   )

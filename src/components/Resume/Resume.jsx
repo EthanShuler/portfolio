@@ -17,6 +17,10 @@ const ResumeContainer = styled.div`
     width: 100%;
     padding: 0 1em;
   }
+
+  h1 {
+    text-align: center;
+  }
 `
 
 const ResumeSection = styled.section`
@@ -92,23 +96,26 @@ const EducationColumn = styled.div`
   }
 `
 
-const ResumeButton = styled(Button)`
-width: 10em;
-margin: 2em 0;
-`
+const ResumeLink = styled.div`
+  text-align: center;
+  button {
+    width: 10em;
+    margin: 2em 0;
+  }
 
-const ResumeLink = () => {
-  return (
-    <a href={ResumePdf} rel='noopener noreferrer' target='_blank' >
-      <ResumeButton trailingIcon="picture_as_pdf" label="Resume">Download Resume</ResumeButton>
-    </a>
-  )
-}
+`
 
 const Resume = () => {
   return (
     <ResumeContainer>
-      <ResumeLink />
+      <h1>Resume</h1>
+
+      <ResumeLink>
+        <a href={ResumePdf} rel='noopener noreferrer' target='_blank' >
+          <Button trailingIcon="picture_as_pdf" label="Resume">Download Resume</Button>
+        </a>
+      </ResumeLink>
+
       <ResumeSection>
         <h2>Competitions</h2>
         <ResumeSectionRows>

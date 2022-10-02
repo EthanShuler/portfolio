@@ -1,14 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
+import Resume from '../Resume/Resume'
 import ethan from './Ethan.jpg'
 
 const AboutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const Biography = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 1em;
   height: 100%;
+
+  margin: 0 auto;
+  max-width: 95.75em;
 
   @media screen and ${device.tablet} {
     padding: 2em 0;
@@ -88,12 +97,12 @@ p {
 
 const AboutImage = styled.div`
 width: 50%;
-height: 100%;
+height: 80vh;
+margin: 1em;
 background-image: url(${ethan});
-background-size: cover;
+background-size: contain;
 background-repeat: no-repeat;
-position: fixed;
-right: 0;
+background-position: center;
 overflow: hidden;
 
 @media screen and ${device.tablet} {
@@ -106,11 +115,14 @@ overflow: hidden;
 const About = () => {
   return (
     <AboutContainer id="about">
-      <AboutText>
-        <Bio />
-        <Values />
-      </AboutText>
-      <AboutImage />
+      <Biography>
+        <AboutText>
+          <Bio />
+          <Values />
+        </AboutText>
+        <AboutImage />
+      </Biography>
+      <Resume />
     </AboutContainer>
   )
 }

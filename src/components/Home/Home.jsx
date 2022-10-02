@@ -8,22 +8,13 @@ const HeroContainer = styled.section`
   top: 0;
   height: 100vh;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 4em;
 
   background-image: url(${headshot});
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  @media screen and ${device.tablet} {
-    padding: 0;
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
+  z-index: -1;
 `
 
 const Title = styled.div`
