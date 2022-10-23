@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Collapsible from './Collapsible'
+import Collapsible from '../Collapsible'
 import { device } from '../../utils/Devices'
 import ResumePdf from './Resume.pdf'
-import Button from './Button'
+import Button from '../Button'
 
 const ResumeContainer = styled.div`
   font-family: Articulat CF,system-ui,sans-serif;
