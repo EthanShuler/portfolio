@@ -222,6 +222,15 @@ const Resume = () => {
         <ResumeSectionRows>
           <ResumeSectionRow>
             <ResumeSectionRowTitle>
+              <h3>New World Symphony</h3>
+              <span>October 2022</span>
+            </ResumeSectionRowTitle>
+            <ResumeSectionRowDescription>
+              <p>Temporary Substitute Second Bassoon</p>
+            </ResumeSectionRowDescription>
+          </ResumeSectionRow>
+          <ResumeSectionRow>
+            <ResumeSectionRowTitle>
               <h3>Palm Beach Symphony</h3>
               <span>February 2022</span>
             </ResumeSectionRowTitle>

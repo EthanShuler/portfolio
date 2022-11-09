@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
+import Socials from '../Socials/Socials'
 import images from './images'
 import PhotoGallery from './PhotoGallery'
 
@@ -22,6 +23,12 @@ const videos = [
     embedId: '4gi7Dj0sFCI',
     description: 'My own arrangement of Bricusse and Newley\'s song "Pure Imagination." All parts recorded by me in my apartment. ',
     date: '2020'
+  },
+  {
+    title: 'Feast (Bill Douglas), IDRS 2022',
+    embedId: 'LgWriZ5or90',
+    description: 'Feast by Bill Douglas, performed at IDRS 2022 in Boulder, CO on Bill\'s tribute concert.',
+    date: '2022'
   }
 ]
 
@@ -106,6 +113,7 @@ const Media = () => {
       <h1>Look</h1>
       <p>Click/Tap image to view full size image and a description</p>
       <PhotoGallery images={images} />
+      <Socials />
     </Container>
   )
 }

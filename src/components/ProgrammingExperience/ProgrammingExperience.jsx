@@ -1,16 +1,29 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { device } from '../../utils/Devices'
 import experience from './experienceData'
 
 const ExperienceContainer = styled.div`
   display: flex;
   padding: 6rem;
+
+  @media screen and ${device.tablet} {
+    flex-direction: column;
+    padding: 0;
+  }
 `
 
 const ExperienceList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 20rem;
+
+  @media screen and ${device.tablet} {
+    flex-direction: row;
+    overflow-x: auto;
+    height: auto;
+  }
 `
 
 const ExperienceSelector = styled.div`
@@ -40,8 +53,13 @@ const ExperienceDescription = ({ experience, className }) =>  (
   )
 
 const ExperienceDetail = styled(ExperienceDescription)`
-  margin-left: 2rem;
-  height: 100%;
+  height: 20rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  background-color: #475569;
+  margin-left: 1rem;
+  padding: 2rem;
+
   h2 {
     display: inline-block;
   }

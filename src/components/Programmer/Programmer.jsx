@@ -11,20 +11,23 @@ import ProgrammerNavbar from '../Navbar/ProgrammerNavbar'
 
 const ProgrammerContainer = styled.div`
 padding: 3rem;
+padding-top: 8rem;
 background-color: #1e293b;
 color: #f3f4f6;
 min-height: 100vh;
 `
 
 const Icon = styled.div`
-height: 6rem;
-width: 6rem;
+height: 4rem;
+width: 4rem;
 `
 
 const Icons = styled.div`
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 `
 
 const Programmer = () => {

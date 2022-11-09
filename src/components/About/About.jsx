@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from '../../utils/Devices'
 import Resume from '../Resume/Resume'
+import Socials from '../Socials/Socials'
 import ethan from './Ethan.jpg'
 
 const AboutContainer = styled.div`
@@ -27,10 +28,8 @@ const Biography = styled.div`
 `
 
 const AboutSection = styled.div`
-  line-height: var(--line-height);
-
   p {
-    line-height: var(--line-height);
+    line-height: 2em;
     padding: 1em 0;
   }
 
@@ -123,6 +122,7 @@ const About = () => {
         <AboutImage />
       </Biography>
       <Resume />
+      <Socials />
     </AboutContainer>
   )
 }
