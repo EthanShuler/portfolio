@@ -4,6 +4,27 @@ import { device } from '../../utils/Devices'
 import images from './images'
 import PhotoGallery from './PhotoGallery'
 
+const videos = [
+  {
+    title: 'Poulenc Trio',
+    embedId: 'VJyt66S_blg',
+    description: 'Performed with Curtis Sellers (oboe) and Sarah Thune (piano) at CU-Boulder',
+    date: '2020'
+  },
+  {
+    title: 'Hummel Concerto',
+    embedId: 'b9rYzbNitpo',
+    description: 'Recorded with Ellen Shuler (piano)',
+    date: '2020'
+  },
+  {
+    title: 'Pure Imagination',
+    embedId: '4gi7Dj0sFCI',
+    description: 'My own arrangement of Bricusse and Newley\'s song "Pure Imagination." All parts recorded by me in my apartment. ',
+    date: '2020'
+  }
+]
+
 const Container = styled.section`
   padding: 4em;
 
@@ -78,24 +99,9 @@ const Media = () => {
     <Container>
       <h1>Watch & Listen</h1>
       <Videos>
-        <YoutubeEmbed
-          title="Poulenc Trio"
-          embedId="VJyt66S_blg"
-          description="Performed with Curtis Sellers (oboe) and Sarah Thune (piano) at CU-Boulder"
-          date="2020"
-        />
-        <YoutubeEmbed
-          title="Hummel Concerto"
-          embedId="b9rYzbNitpo"
-          description="Recorded with Ellen Shuler (piano)"
-          date="2020"
-        />
-        <YoutubeEmbed
-          title="Pure Imagination"
-          embedId="4gi7Dj0sFCI"
-          description="My own arrangement of Bricusse and Newley's song &quot;Pure Imagination.&quot; All parts recorded by me in my apartment. "
-          date="2020"
-        />
+        {videos.map((video, index) => (
+          <YoutubeEmbed key={index} {...video} />
+        ))}
       </Videos>
       <h1>Look</h1>
       <p>Click/Tap image to view full size image and a description</p>

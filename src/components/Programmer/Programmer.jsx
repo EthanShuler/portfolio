@@ -5,6 +5,7 @@ import Projects from '../Projects/Projects'
 import Education from '../Education/Education'
 import Contact from '../Contact/Contact'
 import icons from './icons'
+import ProgrammerNavbar from '../Navbar/ProgrammerNavbar'
 
 //header:  Hero, Experience, Projects, Education, Contact
 
@@ -28,27 +29,31 @@ const Icons = styled.div`
 
 const Programmer = () => {
   return (
-    <ProgrammerContainer>
-      <h1>Programmer</h1>
-      <p>I am also a programmer with several years experience and a degree in Computer Science! This part of my website is still in development :)</p>
-      <Icons>
-        <Icon>{<icons.CSharpIcon />}</Icon>
-        <Icon>{<icons.JSIcon />}</Icon>
-        <Icon>{<icons.GitIcon />}</Icon>
-        <Icon>{<icons.PythonIcon />}</Icon>
-        <Icon>{<icons.ReactIcon />}</Icon>
-        <Icon>{<icons.NodeJSIcon />}</Icon>
-        <Icon>{<icons.HTMLIcon />}</Icon>
-        <Icon>{<icons.CSSIcon />}</Icon>
-        <Icon>{<icons.LinuxIcon />}</Icon>
-        <Icon>{<icons.AWSIcon />}</Icon>
-      </Icons>
-      
-      <ProgrammingExperience />
-      <Projects />
-      <Education />
-      <Contact />
-    </ProgrammerContainer>
+    <>
+      <ProgrammerNavbar />
+      <ProgrammerContainer>
+        <h1>Programmer</h1>
+        <p>I am also a programmer with several years experience and a degree in Computer Science! This part of my website is still in development :)</p>
+        <Icons>
+          <Icon>{<icons.CSharpIcon />}</Icon>
+          <Icon>{<icons.JSIcon />}</Icon>
+          <Icon>{<icons.GitIcon />}</Icon>
+          <Icon>{<icons.PythonIcon />}</Icon>
+          <Icon>{<icons.ReactIcon />}</Icon>
+          <Icon>{<icons.NodeJSIcon />}</Icon>
+          <Icon>{<icons.HTMLIcon />}</Icon>
+          <Icon>{<icons.CSSIcon />}</Icon>
+          <Icon>{<icons.LinuxIcon />}</Icon>
+          <Icon>{<icons.AWSIcon />}</Icon>
+        </Icons>
+        
+        <ProgrammingExperience />
+        <Projects />
+        <Education />
+        <Contact />
+      </ProgrammerContainer>
+    </>
+    
   )
 }
 

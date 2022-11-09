@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import { device } from '../../utils/Devices'
-import logo from './logo.svg'
+import styled from "styled-components"
+import { device } from "../../utils/Devices"
 
-const Navigation = styled.nav`
+export const Navigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,11 +30,11 @@ const Navigation = styled.nav`
   }
 `
 
-const Brand = styled.div`
+export const Brand = styled.div`
   margin-left: 1rem;
 `
 
-const NavigationMenu = styled.div`
+export const NavigationMenu = styled.div`
   margin-left: auto;
   display: flex;
   padding: 0;
@@ -59,20 +56,7 @@ const NavigationMenu = styled.div`
   }
 `
 
-const NavLinkElement = styled(NavLink)`
-  margin: 0 1rem;
-
-  &[class*="active"] {
-    pointer-events: none;
-    opacity: 50%;
-  }
-
-  @media screen and ${device.tablet} {
-    text-align: center;
-    margin: 0;
-}
-`
-const NavText = styled.p`
+export const NavText = styled.p`
   display: block;
   &:hover {
     color: #c24a10;
@@ -90,7 +74,7 @@ const NavText = styled.p`
   }
 `
 
-const Hamburger = styled.button`
+export const Hamburger = styled.button`
   border: 0;
   height: 2.5em;
   width: 2.5em;
@@ -119,48 +103,10 @@ const Hamburger = styled.button`
   }
 `
 
-const Logo = styled.img`
+export const Logo = styled.img`
 width: 75%;
 
 @media screen and ${device.tablet} {
   width: 60%;
 }
 `
-
-const HeaderLink = ({ page, setExpanded }) => {
-  const title = page.charAt(0).toUpperCase() + page.slice(1)
-
-
-  return (
-    <NavLinkElement to={`/${page}`} onClick={() => setExpanded(false)}>
-      <NavText>{title}</NavText>
-    </NavLinkElement>
-  )
-}
-
-const Navbar = () => {
-  const [isNavExpanded, setIsNavExpanded] = useState(false)
-
-  return (
-    <Navigation expanded={isNavExpanded}>
-      <Hamburger onClick={() => setIsNavExpanded(!isNavExpanded)}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-
-      </Hamburger>
-      <Brand>
-        <NavLink to='/'>
-          <Logo src={logo} alt="logo"/>
-        </NavLink>
-      </Brand>
-      <NavigationMenu expanded={isNavExpanded}>
-        <HeaderLink page='home' setExpanded={setIsNavExpanded} />
-        <HeaderLink page='about' setExpanded={setIsNavExpanded} />
-        <HeaderLink page='media' setExpanded={setIsNavExpanded} />
-      </NavigationMenu>
-    </Navigation>
-  )
-}
-
-export default Navbar

@@ -30,9 +30,9 @@ const ExperienceSelector = styled.div`
 
 const ExperienceDescription = ({ experience, className }) =>  (
     <div className={className}>
-      <h1>{experience.company}</h1>
-      <span>{experience.date}</span>
       <h2>{experience.position}</h2>
+      <h2 className='company'>&nbsp;@{experience.company}</h2>
+      <span>{experience.date}</span>
       <ul>
         {experience.description.map((desc) => <li key={desc}>{desc}</li>)}
       </ul>
@@ -42,7 +42,16 @@ const ExperienceDescription = ({ experience, className }) =>  (
 const ExperienceDetail = styled(ExperienceDescription)`
   margin-left: 2rem;
   height: 100%;
+  h2 {
+    display: inline-block;
+  }
+
+  .company {
+    color: #a0aec0;
+  }
+  
   ul {
+    display: block;
     list-style: disc;
   }
 
@@ -51,9 +60,14 @@ const ExperienceDetail = styled(ExperienceDescription)`
   }
 
   span {
+    display: block;
     font-size: 0.8em;
     color: #94a3b8;
   }
+`
+
+const Title = styled.h1`
+  color: #ccd6f6;
 `
 
 const Experience = styled.div`
@@ -65,7 +79,7 @@ const ProgrammingExperience = () => {
 
   return (
     <Experience id='experience'>
-      <h1 style={{'color': '#ccd6f6'}}>Professional Experience</h1>
+      <Title>Professional Experience</Title>
       <ExperienceContainer>
         <ExperienceList>
           {experience.map((job) => {

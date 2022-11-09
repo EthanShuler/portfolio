@@ -5,14 +5,14 @@ import Media from './components/Media/Media'
 import Landing from './components/Landing/Landing'
 import Programmer from './components/Programmer/Programmer';
 import Globals from './utils/GlobalStyles';
-import Navbar from './components/Navbar/Navbar';
+import MusicNavbar from './components/Navbar/MusicNavbar';
 import Resume from './components/Resume/Resume';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 
 const Musician = () => {
   return (
     <>
-      <Navbar />
+      <MusicNavbar />
       <Outlet />
     </>
   )
