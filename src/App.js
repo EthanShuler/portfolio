@@ -6,8 +6,10 @@ import Landing from './components/Landing/Landing'
 import Programmer from './components/Programmer/Programmer';
 import Globals from './utils/GlobalStyles';
 import MusicNavbar from './components/Navbar/MusicNavbar';
-import Resume from './components/Resume/Resume';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
+import Contact from './components/Contact/Contact';
+import Epk from './components/Epk/Epk';
+import Schedule from './components/Schedule/Schedule';
 
 const Musician = () => {
   return (
@@ -34,7 +36,9 @@ const App = () => {
             <Route path='/home' element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='media' element={<Media />} />
-            <Route path='resume' element={<Resume />} />
+            <Route path='epk' element={<Epk />} />
+            <Route path='schedule' element={<Schedule />} />
+            <Route path='contact' element={<Contact />} />
           </Route>
           
           

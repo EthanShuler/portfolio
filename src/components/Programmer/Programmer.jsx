@@ -3,11 +3,8 @@ import styled from 'styled-components'
 import ProgrammingExperience from '../ProgrammingExperience/ProgrammingExperience'
 import Projects from '../Projects/Projects'
 import Education from '../Education/Education'
-import Contact from '../Contact/Contact'
 import icons from './icons'
 import ProgrammerNavbar from '../Navbar/ProgrammerNavbar'
-
-//header:  Hero, Experience, Projects, Education, Contact
 
 const ProgrammerContainer = styled.div`
 padding: 3rem;
@@ -53,7 +50,6 @@ const Programmer = () => {
         <ProgrammingExperience />
         <Projects />
         <Education />
-        <Contact />
       </ProgrammerContainer>
     </>
     

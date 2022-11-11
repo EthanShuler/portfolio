@@ -102,7 +102,6 @@ const ResumeLink = styled.div`
     width: 10em;
     margin: 2em 0;
   }
-
 `
 
 const Resume = () => {
