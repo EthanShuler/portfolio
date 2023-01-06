@@ -155,7 +155,6 @@ const MusicNavbar = () => {
         <HeaderLink page='about' setExpanded={setIsNavExpanded} />
         <HeaderLink page='media' setExpanded={setIsNavExpanded} />
         <HeaderLink page='EPK' setExpanded={setIsNavExpanded} />
-        <HeaderLink page='schedule' setExpanded={setIsNavExpanded} />
         <HeaderLink page='contact' setExpanded={setIsNavExpanded} />
       </NavigationMenu>
     </Navigation>
