@@ -102,10 +102,10 @@ const Hamburger = styled.button`
 `
 
 export const Logo = styled.img`
-width: 75%;
+width: 12.5rem;
 
 @media screen and ${device.tablet} {
-  width: 60%;
+  width: 100%;
 }
 `
 

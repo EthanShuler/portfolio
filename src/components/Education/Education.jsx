@@ -62,13 +62,20 @@ width: 66.66667%;
 `
 
 const EducationContainer = styled.div`
-  margin: 4em 0;
+  max-width: 80em;
+  margin: 2rem auto;
   `
+
+const Title = styled.h1`
+  color: #ccd6f6;
+  text-align: center;
+  margin: 1em auto;
+`
 
 const Education = () => {
   return (
     <EducationContainer id='education'>
-      <h1 style={{'color': '#ccd6f6'}}>Education</h1>
+      <Title>Education</Title>
       <Row>
         <RowTitle>
           <h3>University of Colorado - Boulder</h3>

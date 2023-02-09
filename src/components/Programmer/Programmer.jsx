@@ -15,8 +15,8 @@ min-height: 100vh;
 `
 
 const Icon = styled.div`
-height: 4rem;
-width: 4rem;
+height: 2rem;
+width: 2rem;
 `
 
 const Icons = styled.div`
@@ -33,7 +33,16 @@ const Programmer = () => {
       <ProgrammerNavbar />
       <ProgrammerContainer>
         <h1>Programmer</h1>
-        <p>I am also a programmer with several years experience and a degree in Computer Science! This part of my website is still in development :)</p>
+        <p>
+          I am a programmer with several years experience and a degree in Computer Science! I have a passion for progressive politics and
+          I am a strong believer in the power of technology to improve the lives of people around the world.
+        </p>
+        <p>
+          I am currently looking for a full-time position as a software engineer. I am open to remote work.
+        </p>
+        <p>
+          The technologies I am most familiar with are found below. I have used these extensively in a profession setting or in personal education and projects.
+        </p>
         <Icons>
           <Icon>{<icons.CSharpIcon />}</Icon>
           <Icon>{<icons.JSIcon />}</Icon>

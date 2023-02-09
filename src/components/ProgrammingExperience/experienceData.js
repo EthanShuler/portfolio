@@ -6,9 +6,11 @@ const experience = [
     position: "Software Automation Engineer",
     date: "Febraury 2020 - August 2021",
     description: [
-      "Automated API Integration tests and UI tests for enterprise software system",
-      "Extensive use of C#, NUnit, Linq, SQL",
-      "Worked closely on a SCRUM team with developers and QA analyst",
+      "Used NUnit, MS SQL Server, and best-practice C# programming to write automated unit tests for .NET APIs",
+      "Used Selenium to write automated UI tests and integration tests",
+      "Participated in a SCRUM team, fulfilling the role of QA automation",
+      "Reviewed code in pull requests",
+      "Mentored a newly hired automation engineer",
     ],
   },
   {

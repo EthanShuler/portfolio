@@ -6,10 +6,13 @@ import experience from './experienceData'
 const ExperienceContainer = styled.div`
   display: flex;
   padding: 6rem;
+  max-width: 95.75em;
+  margin: 0 auto;
 
   @media screen and ${device.tablet} {
     flex-direction: column;
     padding: 0;
+    min-height: 100%;
   }
 `
 
@@ -53,7 +56,7 @@ const ExperienceDescription = ({ experience, className }) =>  (
   )
 
 const ExperienceDetail = styled(ExperienceDescription)`
-  height: 20rem;
+  height: 100%;
   border-radius: 0.5rem;
   width: 100%;
   background-color: #475569;
@@ -82,10 +85,16 @@ const ExperienceDetail = styled(ExperienceDescription)`
     font-size: 0.8em;
     color: #94a3b8;
   }
+
+  @media screen and ${device.tablet} {
+    height: 100%;
+  }
 `
 
 const Title = styled.h1`
   color: #ccd6f6;
+  margin: 0 auto;
+  text-align: center;
 `
 
 const Experience = styled.div`
