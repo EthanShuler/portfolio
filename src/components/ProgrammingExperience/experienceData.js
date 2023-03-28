@@ -3,14 +3,13 @@ const experience = [
     id: 1,
     company: "SKYGEN USA",
     location: 'Milwaukee, WI',
-    position: "Software Automation Engineer",
+    position: "Software Engineer",
     date: "Febraury 2020 - August 2021",
     description: [
-      "Used NUnit, MS SQL Server, and best-practice C# programming to write automated unit tests for .NET APIs",
-      "Used Selenium to write automated UI tests and integration tests",
-      "Participated in a SCRUM team, fulfilling the role of QA automation",
-      "Reviewed code in pull requests",
-      "Mentored a newly hired automation engineer",
+      "Developed .NET Core MVC applications, using SQL for the database and C# for the APIs and views. Also developed a Blazor UI.",
+      "Used Selenium and NUnit to write automated unit tests, UI tests and integration tests",
+      "Participated in a SCRUM team",
+      "Mentored a newly hired  engineer",
     ],
   },
   {
@@ -33,6 +32,7 @@ const experience = [
       "Fully migrated company appserver hosting from Windows to Linux, running eleven inter-communicating applications from one server",
       "Automated building and deployment of new servers for each push to production",
       "Extensive use of AWS EC2, AWS CloudFormation, Packer, Nginx, Systemd, git, Elasticsearch/Filebeat, SSL. Extensive exposure to Agile, DevOps",
+      "•	Started project of migrating local app development to Docker containers",
     ],
   },
   {
