@@ -6,7 +6,7 @@ const experience = [
     position: "Software Engineer",
     date: "Febraury 2020 - August 2021",
     description: [
-      "Developed .NET Core MVC applications, using SQL for the database and C# for the APIs and views. Also developed a Blazor UI.",
+      "Developed .NET Core MVC applications, using SQL for the database and C# for the APIs and views. Also developed a Blazor UI that showed test coverage accross the codebase",
       "Used Selenium and NUnit to write automated unit tests, UI tests and integration tests",
       "Participated in a SCRUM team",
       "Mentored a newly hired  engineer",
@@ -29,10 +29,10 @@ const experience = [
     position: "Software Engineer Intern",
     date: "Summer 2019",
     description: [
-      "Fully migrated company appserver hosting from Windows to Linux, running eleven inter-communicating applications from one server",
+      "Fully migrated company appserver hosting from Windows to Linux, running eleven inter-communicating applications from one server, saving the company considerable costs in Windows licensing and maintenance",
       "Automated building and deployment of new servers for each push to production",
       "Extensive use of AWS EC2, AWS CloudFormation, Packer, Nginx, Systemd, git, Elasticsearch/Filebeat, SSL. Extensive exposure to Agile, DevOps",
-      "•	Started project of migrating local app development to Docker containers",
+      "Started project of migrating local app development to Docker containers",
     ],
   },
   {

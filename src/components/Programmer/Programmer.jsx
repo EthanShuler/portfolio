@@ -5,6 +5,7 @@ import Projects from '../Projects/Projects'
 import Education from '../Education/Education'
 import icons from './icons'
 import ProgrammerNavbar from '../Navbar/ProgrammerNavbar'
+import Footer from '../ProgrammerFooter/Footer'
 
 const ProgrammerContainer = styled.div`
 padding: 3rem;
@@ -46,6 +47,7 @@ const Programmer = () => {
         <Icons>
           <Icon>{<icons.CSharpIcon />}</Icon>
           <Icon>{<icons.JSIcon />}</Icon>
+          <Icon>{<icons.cppIcon />}</Icon>
           <Icon>{<icons.GitIcon />}</Icon>
           <Icon>{<icons.PythonIcon />}</Icon>
           <Icon>{<icons.ReactIcon />}</Icon>
@@ -59,6 +61,7 @@ const Programmer = () => {
         <ProgrammingExperience />
         <Projects />
         <Education />
+        <Footer />
       </ProgrammerContainer>
     </>
     

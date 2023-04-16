@@ -219,6 +219,15 @@ const Resume = () => {
       <ResumeSection>
         <h2>Other Experience</h2>
         <ResumeSectionRows>
+        <ResumeSectionRow>
+            <ResumeSectionRowTitle>
+              <h3>Symphony of the Americas</h3>
+              <span>January 2023</span>
+            </ResumeSectionRowTitle>
+            <ResumeSectionRowDescription>
+              <p>Soloist: Haydn's Sinfonia Concertante</p>
+            </ResumeSectionRowDescription>
+          </ResumeSectionRow>
           <ResumeSectionRow>
             <ResumeSectionRowTitle>
               <h3>New World Symphony</h3>
