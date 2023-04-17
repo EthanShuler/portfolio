@@ -139,7 +139,7 @@ const Projects = () => {
           {project.code && 
             <Row>
               <Link href={project.code} target={'_blank'}>Code <Icon src={githubIcon} alt="github" /></Link>
-              { project.hostedSite && <Link href='https://opinionated-git-main-ethanshuler.vercel.app/' target={'_blank'}>Hosted Site</Link> }
+              { project.hostedSite && <Link href={project.hostedSite} target={'_blank'}>Hosted Site</Link> }
             </Row>
           }
       </Project>
