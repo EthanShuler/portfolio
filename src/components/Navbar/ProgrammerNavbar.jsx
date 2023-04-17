@@ -106,7 +106,7 @@ const Logo = styled.img`
 width: 12.5rem;
 
 @media screen and ${device.tablet} {
-  width: 60%;
+  width: 6rem;
 }
 `
 

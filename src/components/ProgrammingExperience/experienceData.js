@@ -4,7 +4,7 @@ const experience = [
     company: "SKYGEN USA",
     location: 'Milwaukee, WI',
     position: "Software Engineer",
-    date: "Febraury 2020 - August 2021",
+    date: "January 2020 - September 2021",
     description: [
       "Developed .NET Core MVC applications, using SQL for the database and C# for the APIs and views. Also developed a Blazor UI that showed test coverage accross the codebase",
       "Used Selenium and NUnit to write automated unit tests, UI tests and integration tests",

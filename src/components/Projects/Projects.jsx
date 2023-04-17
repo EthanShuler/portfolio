@@ -43,7 +43,11 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  @media screen and ${device.tablet} {
+    flex-direction: column;
+  }
 `
 
 const Link = styled.a`
@@ -55,15 +59,13 @@ const Link = styled.a`
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
-  display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1em;
   font-weight: 600;
-  justify-content: center;
   line-height: 1.25;
   margin: 0;
   min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding: 1rem;
   position: relative;
   text-decoration: none;
   transition: all 250ms;
@@ -71,8 +73,10 @@ const Link = styled.a`
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: 10%;
+
+  width: 20%;
   display: flex;
+  justify-content: center;
   gap: 2em;
 
   &:hover {
@@ -85,12 +89,17 @@ const Link = styled.a`
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
+  }
   &:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(0);
+  }
+
+  @media screen and ${device.tablet} {
+    width: 100%;
   }
 `
 
@@ -103,7 +112,8 @@ const projects = [
     name: 'Opinionated',
     description: 'An IMDB/Letterboxd Clone',
     technologies: 'ReactJS, NextJS, TMDB API, PostgreSQL(Supabase), Typescript',
-    code: 'https://github.com/EthanShuler/opinionated'
+    code: 'https://github.com/EthanShuler/opinionated',
+    hostedSite: 'https://opinionated-3taerbcne-ethanshuler.vercel.app/',
   },
   {
     name: 'Polar Bear Random Walk Simulator',
@@ -129,7 +139,7 @@ const Projects = () => {
           {project.code && 
             <Row>
               <Link href={project.code} target={'_blank'}>Code <Icon src={githubIcon} alt="github" /></Link>
-              {/* <Link href='https://opinionated-git-main-ethanshuler.vercel.app/' target={'_blank'}>Hosted Site</Link> */}
+              { project.hostedSite && <Link href='https://opinionated-git-main-ethanshuler.vercel.app/' target={'_blank'}>Hosted Site</Link> }
             </Row>
           }
       </Project>
