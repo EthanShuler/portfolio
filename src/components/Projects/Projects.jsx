@@ -113,7 +113,7 @@ const projects = [
     description: 'An IMDB/Letterboxd Clone',
     technologies: 'ReactJS, NextJS, TMDB API, PostgreSQL(Supabase), Typescript',
     code: 'https://github.com/EthanShuler/opinionated',
-    hostedSite: 'https://opinionated-3taerbcne-ethanshuler.vercel.app/',
+    hostedSite: 'https://soundtracked.vercel.app/',
   },
   {
     name: 'Polar Bear Random Walk Simulator',
