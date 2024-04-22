@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Collapsible from '../Collapsible'
 import { device } from '../../utils/Devices'
 import ResumePdf from './Resume.pdf'
+import UpdatedResumePdf from './Resume_4-22-24.pdf'
 import Button from '../Button'
 
 const ResumeContainer = styled.div`
@@ -112,6 +113,11 @@ const Resume = () => {
       <ResumeLink>
         <a href={ResumePdf} rel='noopener noreferrer' target='_blank' >
           <Button trailingIcon="picture_as_pdf" label="Resume">Download Resume</Button>
+        </a>
+      </ResumeLink>
+      <ResumeLink>
+        <a href={UpdatedResumePdf} rel='noopener noreferrer' target='_blank' >
+          <Button trailingIcon="picture_as_pdf" label="Resume">Download Resume (programmer) </Button>
         </a>
       </ResumeLink>
 
