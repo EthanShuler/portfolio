@@ -9,6 +9,7 @@ import MusicNavbar from './components/Navbar/MusicNavbar';
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import Contact from './components/Contact/Contact';
 import Epk from './components/Epk/Epk';
+import Scales from './components/Scales/Scales';
 
 const Musician = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
             <Route path='media' element={<Media />} />
             <Route path='epk' element={<Epk />} />
             <Route path='contact' element={<Contact />} />
+            <Route path='scales' element={<Scales />} />
           </Route>
           
           
